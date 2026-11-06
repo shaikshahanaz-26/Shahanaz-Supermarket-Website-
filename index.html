@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shahanaz Super Market</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+    background:#07070a;
+    color:white;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    height:78px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 6%;
+    background:#050507;
+    border-bottom:1px solid rgba(233,30,99,.25);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:11px;
+    text-decoration:none;
+    color:white;
+}
+
+.logo-icon{
+    width:43px;
+    height:43px;
+    display:grid;
+    place-items:center;
+    background:#e91e63;
+    border-radius:12px;
+    font-size:20px;
+}
+
+.logo-text{
+    font-size:16px;
+    font-weight:800;
+}
+
+.logo-text span{
+    color:#ff4081;
+}
+
+.nav-links{
+    display:flex;
+    gap:5px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:#ddd;
+    text-decoration:none;
+    font-size:10px;
+    font-weight:700;
+    padding:10px 12px;
+    border-radius:7px;
+}
+
+.nav-links a:hover{
+    color:#ff4081;
+}
+
+.nav-links a.active{
+    background:#e91e63;
+    color:white;
+}
+
+.shop-button{
+    padding:11px 18px;
+    background:#e91e63;
+    color:white;
+    text-decoration:none;
+    font-size:10px;
+    font-weight:700;
+    border-radius:8px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    padding:35px 5% 60px;
+
+    background:
+    radial-gradient(
+        circle at 50% 10%,
+        rgba(233,30,99,.13),
+        transparent 35%
+    ),
+    #07070a;
+}
+
+.hero-intro{
+    text-align:center;
+    max-width:850px;
+    margin:0 auto 30px;
+}
+
+.hero-intro small{
+    color:#ff4081;
+    font-size:9px;
+    font-weight:800;
+    letter-spacing:4px;
+}
+
+.hero-intro h1{
+    margin-top:12px;
+    font-family:'Playfair Display',serif;
+    font-size:clamp(35px,5vw,60px);
+}
+
+.hero-intro h1 span{
+    color:#ff4081;
+}
+
+.hero-intro p{
+    max-width:620px;
+    margin:15px auto 0;
+    color:#9b9ba3;
+    font-size:12px;
+    line-height:1.8;
+}
+
+
+/* =========================
+   MAIN SLIDER
+========================= */
+
+.main-banner{
+    width:100%;
+    max-width:1400px;
+    margin:auto;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    background:#111;
+
+    border:1px solid rgba(255,64,129,.45);
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.55);
+}
+
+
+/* Slider */
+
+.banner-slides{
+    position:relative;
+    width:100%;
+}
+
+
+/*
+IMPORTANT:
+Every slide has the same space.
+Only ONE slide is visible at a time.
+*/
+
+.banner-slide{
+    display:none;
+    position:relative;
+    width:100%;
+}
+
+.banner-slide.active{
+    display:block;
+    animation:fadeSlide 1s ease;
+}
+
+
+/* Images */
+
+.banner-slide > img{
+    width:100%;
+    height:auto;
+    display:block;
+}
+
+
+/* Animation */
+
+@keyframes fadeSlide{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+
+/* =========================
+   FIRST SLIDE BRANDING
+========================= */
+
+.first-banner-content{
+
+    position:absolute;
+
+    top:9%;
+    left:6%;
+
+    width:42%;
+
+    z-index:10;
+
+    color:#d4af37;
+
+    text-align:left;
+
+    /*
+    This is ONLY a subtle background fade.
+    It is NOT a glass box.
+    */
+
+    padding:10px 30px 15px 5px;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(0,0,0,.65),
+        rgba(0,0,0,.25),
+        transparent
+    );
+}
+
+
+/* Gold logo */
+
+.gold-logo{
+
+    width:60px;
+    height:60px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:2px solid #d4af37;
+
+    border-radius:50%;
+
+    color:#d4af37;
+
+    font-size:27px;
+
+    margin-bottom:15px;
+
+    background:transparent;
+
+    text-shadow:
+        0 2px 5px black;
+
+    box-shadow:
+        0 0 15px rgba(212,175,55,.35);
+}
+
+
+/* Name */
+
+.gold-name{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:clamp(25px,3.4vw,50px);
+
+    line-height:1.08;
+
+    font-weight:700;
+
+    color:#d4af37;
+
+    text-shadow:
+        0 3px 8px rgba(0,0,0,.95),
+        0 0 12px rgba(0,0,0,.7);
+}
+
+
+/* Golden line */
+
+.gold-line{
+
+    width:85px;
+
+    height:2px;
+
+    margin:15px 0;
+
+    background:#d4af37;
+
+    box-shadow:
+        0 0 8px rgba(212,175,55,.5);
+}
+
+
+/* Caption */
+
+.gold-caption{
+
+    font-size:clamp(9px,1vw,14px);
+
+    font-weight:700;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    color:#e5c65a;
+
+    text-shadow:
+        0 2px 7px black;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.banner-actions{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+    margin-top:25px;
+}
+
+.banner-btn{
+
+    display:inline-block;
+
+    padding:13px 22px;
+
+    border-radius:8px;
+
+    text-decoration:none;
+
+    font-size:10px;
+
+    font-weight:700;
+}
+
+.banner-btn.primary{
+
+    background:#e91e63;
+
+    color:white;
+
+}
+
+.banner-btn.secondary{
+
+    border:1px solid rgba(255,64,129,.45);
+
+    color:#ff4081;
+
+    background:#0d0d11;
+}
+
+
+/* =========================
+   STORE HEADING
+========================= */
+
+.banner-section{
+
+    max-width:1400px;
+
+    margin:30px auto 0;
+
+    padding:0 5%;
+}
+
+.section-heading{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:end;
+
+    margin-bottom:18px;
+}
+
+.section-heading small{
+
+    color:#ff4081;
+
+    font-size:9px;
+
+    font-weight:800;
+
+    letter-spacing:3px;
+}
+
+.section-heading h2{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:30px;
+
+    margin-top:6px;
+}
+
+.section-heading p{
+
+    color:#777;
+
+    font-size:9px;
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features{
+
+    padding:90px 6%;
+
+    background:
+    radial-gradient(
+        circle at 50% 0%,
+        rgba(233,30,99,.10),
+        transparent 35%
+    );
+}
+
+.feature-title{
+
+    text-align:center;
+
+    margin-bottom:35px;
+}
+
+.feature-title small{
+
+    color:#ff4081;
+
+    font-size:9px;
+
+    font-weight:800;
+
+    letter-spacing:3px;
+}
+
+.feature-title h2{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:36px;
+
+    margin-top:8px;
+}
+
+.feature-grid{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+}
+
+.feature{
+
+    padding:30px 25px;
+
+    background:#101014;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:17px;
+
+    text-align:center;
+
+    transition:.3s;
+}
+
+.feature:hover{
+
+    transform:translateY(-6px);
+
+    border-color:rgba(233,30,99,.4);
+}
+
+.feature-icon{
+
+    width:55px;
+    height:55px;
+
+    display:grid;
+
+    place-items:center;
+
+    margin:auto;
+
+    border-radius:15px;
+
+    background:rgba(233,30,99,.12);
+
+    border:1px solid rgba(233,30,99,.25);
+
+    font-size:24px;
+}
+
+.feature h3{
+
+    margin-top:15px;
+
+    font-size:14px;
+}
+
+.feature p{
+
+    margin-top:8px;
+
+    color:#888;
+
+    font-size:10px;
+
+    line-height:1.7;
+}
+
+
+/* =========================
+   CATEGORIES
+========================= */
+
+.categories-section{
+
+    padding:30px 6% 90px;
+}
+
+.categories-heading{
+
+    max-width:1200px;
+
+    margin:0 auto 25px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:end;
+}
+
+.categories-heading h2{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:36px;
+}
+
+.categories-heading a{
+
+    color:#ff4081;
+
+    text-decoration:none;
+
+    font-size:10px;
+
+    font-weight:700;
+}
+
+.categories{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:18px;
+}
+
+.category{
+
+    height:200px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:16px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    text-decoration:none;
+
+    color:white;
+
+    background:#111;
+}
+
+.category img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+}
+
+.category::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        transparent 20%,
+        rgba(0,0,0,.88)
+    );
+}
+
+.category:hover img{
+
+    transform:scale(1.08);
+}
+
+.category-name{
+
+    position:absolute;
+
+    z-index:2;
+
+    bottom:18px;
+
+    left:18px;
+
+    font-size:13px;
+
+    font-weight:700;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    background:#040406;
+
+    padding:55px 6% 25px;
+
+    border-top:1px solid rgba(233,30,99,.18);
+}
+
+.footer-content{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr;
+
+    gap:50px;
+}
+
+.footer-logo{
+
+    font-size:19px;
+
+    font-weight:800;
+
+    margin-bottom:14px;
+}
+
+.footer-logo span{
+
+    color:#ff4081;
+}
+
+footer h3{
+
+    font-size:13px;
+
+    margin-bottom:15px;
+}
+
+footer p{
+
+    color:#8d8d96;
+
+    font-size:10px;
+
+    line-height:1.8;
+}
+
+.footer-links{
+
+    list-style:none;
+}
+
+.footer-links li{
+
+    margin:9px 0;
+}
+
+.footer-links a{
+
+    color:#8d8d96;
+
+    text-decoration:none;
+
+    font-size:10px;
+}
+
+.copyright{
+
+    max-width:1200px;
+
+    margin:40px auto 0;
+
+    padding-top:20px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    text-align:center;
+
+    color:#666;
+
+    font-size:9px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:900px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .feature-grid{
+        grid-template-columns:1fr;
+    }
+
+    .categories{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-content{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .first-banner-content{
+
+        top:7%;
+
+        left:5%;
+
+        width:50%;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .navbar{
+
+        height:68px;
+
+        padding:0 5%;
+    }
+
+    .logo-icon{
+
+        width:38px;
+        height:38px;
+
+        font-size:17px;
+    }
+
+    .logo-text{
+
+        font-size:12px;
+    }
+
+    .shop-button{
+
+        padding:9px 12px;
+
+        font-size:8px;
+    }
+
+    .hero{
+
+        padding:25px 4% 45px;
+    }
+
+    .hero-intro{
+
+        margin-bottom:22px;
+    }
+
+    .hero-intro h1{
+
+        font-size:35px;
+    }
+
+    .hero-intro p{
+
+        font-size:10px;
+    }
+
+    .main-banner{
+
+        border-radius:15px;
+    }
+
+
+    /* FIRST SLIDE */
+
+    .first-banner-content{
+
+        top:6%;
+
+        left:4%;
+
+        width:60%;
+
+        padding:6px 12px 10px 3px;
+
+        background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.60),
+            rgba(0,0,0,.18),
+            transparent
+        );
+    }
+
+    .gold-logo{
+
+        width:42px;
+
+        height:42px;
+
+        font-size:18px;
+
+        margin-bottom:7px;
+    }
+
+    .gold-name{
+
+        font-size:20px;
+    }
+
+    .gold-line{
+
+        width:50px;
+
+        margin:7px 0;
+    }
+
+    .gold-caption{
+
+        font-size:7px;
+
+        letter-spacing:1.5px;
+
+        line-height:1.5;
+    }
+
+
+    .banner-actions{
+
+        flex-direction:column;
+
+        align-items:center;
+    }
+
+    .banner-btn{
+
+        width:80%;
+
+        text-align:center;
+    }
+
+    .section-heading{
+
+        display:block;
+    }
+
+    .section-heading p{
+
+        margin-top:8px;
+    }
+
+    .categories-section{
+
+        padding:20px 4% 60px;
+    }
+
+    .categories-heading h2{
+
+        font-size:29px;
+    }
+
+    .categories{
+
+        grid-template-columns:1fr;
+    }
+
+    .feature-title h2{
+
+        font-size:30px;
+    }
+
+    .footer-content{
+
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav class="navbar">
+
+    <a href="index.html" class="logo">
+
+        <div class="logo-icon">
+            🛒
+        </div>
+
+        <div class="logo-text">
+
+            Shahanaz
+            <span>Super Market</span>
+
+        </div>
+
+    </a>
+
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="index.html" class="active">
+                HOME
+            </a>
+        </li>
+
+        <li>
+            <a href="products1.html">
+                PRODUCTS
+            </a>
+        </li>
+
+        <li>
+            <a href="Offers.html">
+                OFFERS
+            </a>
+        </li>
+
+        <li>
+            <a href="categories.html">
+                CATEGORIES
+            </a>
+        </li>
+
+        <li>
+            <a href="About.html">
+                ABOUT US
+            </a>
+        </li>
+
+        <li>
+            <a href="contact.html">
+                CONTACT
+            </a>
+        </li>
+
+    </ul>
+
+
+    <a href="products1.html" class="shop-button">
+        SHOP NOW
+    </a>
+
+</nav>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+
+    <div class="hero-intro">
+
+        <small>
+            WELCOME TO SHAHANAZ SUPER MARKET
+        </small>
+
+        <h1>
+
+            Your Shopping.
+            <span>Our Passion.</span>
+
+        </h1>
+
+        <p>
+
+            Discover quality products, fresh groceries,
+            everyday essentials and exciting offers —
+            all in one place.
+
+        </p>
+
+    </div>
+
+
+
+    <!-- =========================
+         MAIN BANNER
+    ========================= -->
+
+    <div class="main-banner">
+
+        <div class="banner-slides">
+
+
+            <!-- =========================
+                 SLIDE 1 — YOUR PHOTO
+            ========================= -->
+
+            <div class="banner-slide active">
+
+                <img
+                    src="img5.jpg.jpeg"
+                    alt="Shahanaz Super Market">
+
+                <div class="first-banner-content">
+
+                    <div class="gold-logo">
+                        🛒
+                    </div>
+
+                    <div class="gold-name">
+
+                        Shahanaz<br>
+                        Super Market
+
+                    </div>
+
+                    <div class="gold-line"></div>
+
+                    <div class="gold-caption">
+
+                        Quality You Can Trust
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 SLIDE 2 — BUILDING
+                 
+                 NO TEXT
+            ========================= -->
+
+            <div class="banner-slide">
+
+                <img
+                    src="img6.jpg.jpeg"
+                    alt="Shahanaz Super Market Building">
+
+            </div>
+
+
+
+            <!-- =========================
+                 SLIDE 3 — GROCERIES
+                 
+                 NO TEXT
+            ========================= -->
+
+            <div class="banner-slide">
+
+                <img
+                    src="img7.jpg.jpeg"
+                    alt="Fresh Groceries">
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         BUTTONS
+    ========================= -->
+
+    <div class="banner-actions">
+
+        <a
+            href="products1.html"
+            class="banner-btn primary">
+
+            EXPLORE PRODUCTS →
+
+        </a>
+
+        <a
+            href="offers.html"
+            class="banner-btn secondary">
+
+            VIEW OFFERS
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     STORE HEADING
+========================= -->
+
+<section class="banner-section">
+
+    <div class="section-heading">
+
+        <div>
+
+            <small>
+                DISCOVER MORE
+            </small>
+
+            <h2>
+                Explore Our Store
+            </h2>
+
+        </div>
+
+        <p>
+            Fresh choices. Great value. Every day.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FEATURES
+========================= -->
+
+<section class="features">
+
+    <div class="feature-title">
+
+        <small>
+            WHY SHOP WITH US
+        </small>
+
+        <h2>
+            Everything You Need
+        </h2>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                🥬
+            </div>
+
+            <h3>
+                Fresh Products
+            </h3>
+
+            <p>
+                Carefully selected products
+                for your everyday needs.
+            </p>
+
+        </div>
+
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                🛍️
+            </div>
+
+            <h3>
+                Easy Shopping
+            </h3>
+
+            <p>
+                Find your everyday essentials
+                quickly and conveniently.
+            </p>
+
+        </div>
+
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                ⭐
+            </div>
+
+            <h3>
+                Trusted Quality
+            </h3>
+
+            <p>
+                Quality products and value
+                you can rely on.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CATEGORIES
+========================= -->
+
+<section class="categories-section">
+
+
+    <div class="categories-heading">
+
+        <h2>
+            Shop by Category
+        </h2>
+
+        <a href="categories.html">
+            VIEW ALL →
+        </a>
+
+    </div>
+
+
+    <div class="categories">
+
+
+        <a href="categories.html" class="category">
+
+            <img
+                src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=900&q=85"
+                alt="Fresh Fruits">
+
+            <div class="category-name">
+                Fresh Fruits
+            </div>
+
+        </a>
+
+
+
+        <a href="categories.html" class="category">
+
+            <img
+                src="https://images.unsplash.com/photo-1597362925123-77861d3fbac7?auto=format&fit=crop&w=900&q=85"
+                alt="Vegetables">
+
+            <div class="category-name">
+                Vegetables
+            </div>
+
+        </a>
+
+
+
+        <a href="categories.html" class="category">
+
+            <img
+                src="https://images.unsplash.com/photo-1588013273468-315fd88ea34c?auto=format&fit=crop&w=900&q=85"
+                alt="Groceries">
+
+            <div class="category-name">
+                Groceries
+            </div>
+
+        </a>
+
+
+
+        <a href="categories.html" class="category">
+
+            <img
+                src="https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?auto=format&fit=crop&w=900&q=85"
+                alt="Household Essentials">
+
+            <div class="category-name">
+                Household Essentials
+            </div>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+
+    <div class="footer-content">
+
+
+        <div>
+
+            <div class="footer-logo">
+
+                Shahanaz
+                <span>
+                    Super Market
+                </span>
+
+            </div>
+
+            <p>
+
+                Your trusted destination for
+                fresh groceries, daily essentials
+                and quality products.
+
+            </p>
+
+        </div>
+
+
+
+        <div>
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <ul class="footer-links">
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="products1.html">
+                        Products
+                    </a>
+                </li>
+
+                <li>
+                    <a href="offers.html">
+                        Offers
+                    </a>
+                </li>
+
+                <li>
+                    <a href="categories.html">
+                        Categories
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html">
+                        About Us
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <div>
+
+            <h3>
+                Contact
+            </h3>
+
+            <p>
+                📍 Kurnool, Andhra Pradesh
+            </p>
+
+            <p>
+                📞 +91 XXXXX XXXXX
+            </p>
+
+            <p>
+                ✉️ shahanazsupermarket@gmail.com
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="copyright">
+
+        © 2026 Shahanaz Super Market.
+        All Rights Reserved.
+
+    </div>
+
+
+</footer>
+
+
+
+<!-- =========================
+     SLIDER JAVASCRIPT
+========================= -->
+
+<script>
+
+const slides =
+document.querySelectorAll(".banner-slide");
+
+let currentSlide = 0;
+
+
+function showSlide(index){
+
+    slides.forEach(function(slide){
+
+        slide.classList.remove("active");
+
+    });
+
+    slides[index].classList.add("active");
+}
+
+
+function nextSlide(){
+
+    currentSlide++;
+
+    if(currentSlide >= slides.length){
+
+        currentSlide = 0;
+
+    }
+
+    showSlide(currentSlide);
+
+}
+
+
+/* Change slide every 5 seconds */
+
+setInterval(nextSlide,5000);
+
+</script>
+
+
+</body>
+
+</html>

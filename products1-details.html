@@ -1,0 +1,1889 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Product Details | Shahanaz Super Market</title>
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#08090d;
+    color:#fff;
+    min-height:100vh;
+}
+
+
+/* =========================================================
+   DARK CATEGORIES / PRODUCTS BACKGROUND
+========================================================= */
+
+.hero-bg{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(5,8,15,.96),
+            rgba(9,15,25,.88),
+            rgba(4,8,14,.96)
+        ),
+
+        url("https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=2200&q=90")
+
+        center/cover no-repeat;
+
+    filter:blur(3px);
+
+    transform:scale(1.04);
+
+    z-index:-2;
+}
+
+
+.hero-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(233,30,99,.18),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(255,193,7,.08),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            180deg,
+            rgba(3,5,10,.2),
+            rgba(3,5,10,.82)
+        );
+
+    z-index:-1;
+
+    pointer-events:none;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar{
+
+    height:82px;
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 5vw;
+
+    background:rgba(5,7,12,.58);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.12);
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:11px;
+}
+
+
+.logo-icon{
+
+    width:46px;
+
+    height:46px;
+
+    display:grid;
+
+    place-items:center;
+
+    background:#e91e63;
+
+    color:#fff;
+
+    border-radius:12px;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    box-shadow:
+        0 10px 30px rgba(233,30,99,.35);
+}
+
+
+.logo-text h1{
+
+    color:#fff;
+
+    font-size:16px;
+
+    white-space:nowrap;
+}
+
+
+.logo-text span{
+
+    display:block;
+
+    color:#aeb4c0;
+
+    font-size:7px;
+
+    letter-spacing:3px;
+
+    margin-top:4px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:4px;
+}
+
+
+.nav-links a{
+
+    color:#e9edf5;
+
+    text-decoration:none;
+
+    font-size:8px;
+
+    font-weight:bold;
+
+    padding:11px 13px;
+
+    border-radius:8px;
+
+    transition:.25s;
+}
+
+
+.nav-links a:hover{
+
+    background:rgba(255,255,255,.08);
+
+    color:#ff4081;
+}
+
+
+.nav-links a.active{
+
+    background:#e91e63;
+
+    color:#fff;
+
+    box-shadow:
+        0 8px 22px rgba(233,30,99,.25);
+}
+
+
+.nav-links .offer-link{
+
+    color:#ffd54f;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.details-page{
+
+    min-height:100vh;
+
+    padding:
+        65px 6vw 100px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.details-header{
+
+    max-width:900px;
+
+    margin:
+        0 auto 40px;
+
+    text-align:center;
+
+    color:#fff;
+
+    text-shadow:
+        0 2px 15px rgba(0,0,0,.55);
+}
+
+
+.small-title{
+
+    color:#ff4081;
+
+    font-size:10px;
+
+    font-weight:bold;
+
+    letter-spacing:4px;
+
+    margin-bottom:15px;
+}
+
+
+.details-header h2{
+
+    font-size:
+        clamp(42px,6vw,70px);
+
+    line-height:.95;
+
+    letter-spacing:-4px;
+
+    margin-bottom:15px;
+}
+
+
+.details-header h2 span{
+
+    color:#ff4081;
+}
+
+
+/* =========================================================
+   PRODUCT DETAILS CARD
+========================================================= */
+
+.details-card{
+
+    max-width:1200px;
+
+    margin:0 auto;
+
+    background:
+        rgba(12,15,23,.70);
+
+    border:
+        1px solid rgba(255,255,255,.12);
+
+    border-radius:28px;
+
+    padding:30px;
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:40px;
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.45);
+
+    backdrop-filter:blur(18px);
+
+    position:relative;
+
+    z-index:2;
+}
+
+
+/* =========================================================
+   PRODUCT IMAGE
+========================================================= */
+
+.product-image{
+
+    height:560px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:22px;
+
+    background:#15171d;
+
+    border:
+        1px solid rgba(255,255,255,.10);
+}
+
+
+.product-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.5s;
+}
+
+
+.product-image:hover img{
+
+    transform:scale(1.04);
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.product-image::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    right:0;
+
+    bottom:0;
+
+    height:120px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,.60)
+        );
+
+    pointer-events:none;
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.badge{
+
+    position:absolute;
+
+    top:18px;
+
+    left:18px;
+
+    z-index:5;
+
+    padding:8px 12px;
+
+    border-radius:8px;
+
+    background:#e91e63;
+
+    color:#fff;
+
+    font-size:9px;
+
+    font-weight:bold;
+
+    box-shadow:
+        0 6px 18px rgba(0,0,0,.30);
+}
+
+
+/* =========================================================
+   PRODUCT INFORMATION
+========================================================= */
+
+.product-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    padding:10px 15px;
+}
+
+
+.product-category{
+
+    color:#ff4081;
+
+    font-size:9px;
+
+    font-weight:bold;
+
+    letter-spacing:3px;
+
+    margin-bottom:12px;
+}
+
+
+.product-info h1{
+
+    font-size:
+        clamp(36px,4vw,58px);
+
+    line-height:1.05;
+
+    letter-spacing:-2px;
+
+    margin-bottom:20px;
+
+    color:#fff;
+}
+
+
+.description{
+
+    color:#aeb4bf;
+
+    font-size:13px;
+
+    line-height:1.8;
+
+    max-width:520px;
+
+    margin-bottom:25px;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.price{
+
+    display:flex;
+
+    align-items:baseline;
+
+    gap:7px;
+
+    margin-bottom:28px;
+}
+
+
+.price strong{
+
+    font-size:32px;
+
+    color:#fff;
+}
+
+
+.price span{
+
+    color:#8d939e;
+
+    font-size:11px;
+}
+
+
+/* =========================================================
+   PRODUCT FEATURES
+========================================================= */
+
+.features{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:10px;
+
+    margin-bottom:28px;
+}
+
+
+.feature{
+
+    background:
+        rgba(255,255,255,.055);
+
+    border:
+        1px solid rgba(255,255,255,.10);
+
+    border-radius:12px;
+
+    padding:15px 8px;
+
+    text-align:center;
+
+    backdrop-filter:blur(10px);
+
+    transition:.25s;
+}
+
+
+.feature:hover{
+
+    border-color:
+        rgba(233,30,99,.45);
+
+    background:
+        rgba(233,30,99,.08);
+
+    transform:translateY(-3px);
+}
+
+
+.feature-icon{
+
+    color:#ff4081;
+
+    font-size:19px;
+
+    margin-bottom:7px;
+}
+
+
+.feature strong{
+
+    display:block;
+
+    color:#fff;
+
+    font-size:9px;
+}
+
+
+.feature span{
+
+    color:#8d939e;
+
+    font-size:8px;
+}
+
+
+/* =========================================================
+   QUANTITY
+========================================================= */
+
+.quantity-title{
+
+    font-size:10px;
+
+    font-weight:bold;
+
+    color:#e9edf5;
+
+    margin-bottom:8px;
+}
+
+
+.quantity{
+
+    width:135px;
+
+    height:43px;
+
+    display:flex;
+
+    align-items:center;
+
+    border:
+        1px solid rgba(255,255,255,.14);
+
+    border-radius:9px;
+
+    overflow:hidden;
+
+    margin-bottom:22px;
+
+    background:
+        rgba(255,255,255,.045);
+}
+
+
+.quantity button{
+
+    width:42px;
+
+    height:100%;
+
+    border:0;
+
+    background:
+        rgba(255,255,255,.06);
+
+    color:#fff;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+
+.quantity button:hover{
+
+    background:#e91e63;
+}
+
+
+.quantity span{
+
+    flex:1;
+
+    text-align:center;
+
+    color:#fff;
+
+    font-weight:bold;
+
+    font-size:13px;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.buttons{
+
+    display:flex;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+}
+
+
+.add-cart{
+
+    border:0;
+
+    background:#e91e63;
+
+    color:#fff;
+
+    padding:14px 25px;
+
+    border-radius:8px;
+
+    font-size:10px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    box-shadow:
+        0 8px 22px rgba(233,30,99,.25);
+}
+
+
+.add-cart:hover{
+
+    background:#c2185b;
+
+    transform:translateY(-2px);
+}
+
+
+.back-products{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:
+        1px solid rgba(255,255,255,.16);
+
+    background:
+        rgba(255,255,255,.055);
+
+    color:#fff;
+
+    text-decoration:none;
+
+    padding:14px 23px;
+
+    border-radius:8px;
+
+    font-size:10px;
+
+    font-weight:bold;
+
+    transition:.25s;
+}
+
+
+.back-products:hover{
+
+    border-color:#e91e63;
+
+    background:
+        rgba(233,30,99,.10);
+
+    color:#ff4081;
+}
+
+
+/* =========================================================
+   CART
+========================================================= */
+
+.cart{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:62px;
+
+    height:62px;
+
+    border-radius:50%;
+
+    background:#e91e63;
+
+    color:#fff;
+
+    display:grid;
+
+    place-items:center;
+
+    font-size:23px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 12px 35px rgba(233,30,99,.42);
+
+    z-index:2000;
+
+    transition:.25s;
+}
+
+
+.cart:hover{
+
+    transform:scale(1.08);
+
+    background:#c2185b;
+}
+
+
+.cart-count{
+
+    position:absolute;
+
+    top:-3px;
+
+    right:-3px;
+
+    width:22px;
+
+    height:22px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:50%;
+
+    background:#ffd54f;
+
+    color:#111;
+
+    font-size:9px;
+
+    font-weight:bold;
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.cart-message{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:100px;
+
+    background:
+        rgba(8,9,13,.95);
+
+    color:#fff;
+
+    padding:13px 18px;
+
+    border:
+        1px solid rgba(255,255,255,.12);
+
+    border-radius:9px;
+
+    font-size:10px;
+
+    font-weight:bold;
+
+    opacity:0;
+
+    transform:translateY(10px);
+
+    pointer-events:none;
+
+    transition:.25s;
+
+    z-index:3000;
+}
+
+
+.cart-message.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:900px){
+
+    .details-card{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .product-image{
+
+        height:450px;
+
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .navbar{
+
+        height:70px;
+
+        padding:0 15px;
+    }
+
+    .logo-icon{
+
+        width:38px;
+
+        height:38px;
+
+        font-size:18px;
+    }
+
+    .logo-text h1{
+
+        font-size:11px;
+    }
+
+    .logo-text span{
+
+        display:none;
+    }
+
+    .nav-links{
+
+        gap:1px;
+    }
+
+    .nav-links a{
+
+        font-size:6px;
+
+        padding:6px 4px;
+    }
+
+    .details-page{
+
+        padding:
+            40px 12px 80px;
+    }
+
+    .details-card{
+
+        padding:15px;
+
+        border-radius:20px;
+
+        gap:25px;
+    }
+
+    .product-image{
+
+        height:330px;
+
+        border-radius:16px;
+    }
+
+    .product-info{
+
+        padding:5px;
+    }
+
+    .product-info h1{
+
+        font-size:38px;
+    }
+
+    .description{
+
+        font-size:11px;
+    }
+
+    .features{
+
+        gap:6px;
+    }
+
+    .buttons{
+
+        flex-direction:column;
+    }
+
+    .add-cart,
+    .back-products{
+
+        width:100%;
+    }
+
+    .cart{
+
+        right:18px;
+
+        bottom:18px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- BACKGROUND -->
+
+<div class="hero-bg"></div>
+<div class="hero-overlay"></div>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav class="navbar">
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            S
+        </div>
+
+        <div class="logo-text">
+
+            <h1>
+                Shahanaz Super Market
+            </h1>
+
+            <span>
+                FRESH • QUALITY • EVERYDAY
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="nav-links">
+
+        <a href="index.html">
+            HOME
+        </a>
+
+        <a
+            href="products1.html"
+            class="active">
+            PRODUCTS
+        </a>
+
+        <a href="categories.html">
+            CATEGORIES
+        </a>
+
+        <a
+            href="offers.html"
+            class="offer-link">
+            OFFERS
+        </a>
+
+        <a href="about.html">
+            ABOUT
+        </a>
+
+        <a href="contact.html">
+            CONTACT
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="details-page">
+
+
+    <section class="details-header">
+
+        <div class="small-title">
+            SHAHANAZ SUPER MARKET
+        </div>
+
+        <h2>
+            Product <span>Details.</span>
+        </h2>
+
+    </section>
+
+
+    <!-- =================================================
+         PRODUCT CARD
+    ================================================= -->
+
+    <section class="details-card">
+
+
+        <!-- IMAGE -->
+
+        <div class="product-image">
+
+            <div
+                class="badge"
+                id="productBadge"
+                style="display:none;">
+            </div>
+
+            <img
+                id="productImage"
+                src=""
+                alt="Product">
+
+        </div>
+
+
+        <!-- INFORMATION -->
+
+        <div class="product-info">
+
+            <div
+                class="product-category"
+                id="productCategory">
+            </div>
+
+
+            <h1 id="productName">
+                Product
+            </h1>
+
+
+            <p
+                class="description"
+                id="productDescription">
+            </p>
+
+
+            <div class="price">
+
+                <strong id="productPrice">
+                    ₹0
+                </strong>
+
+                <span id="productUnit">
+                    / unit
+                </span>
+
+            </div>
+
+
+            <!-- FEATURES -->
+
+            <div class="features">
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        ✓
+                    </div>
+
+                    <strong>
+                        QUALITY
+                    </strong>
+
+                    <span>
+                        Checked
+                    </span>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        ★
+                    </div>
+
+                    <strong>
+                        PREMIUM
+                    </strong>
+
+                    <span>
+                        Selection
+                    </span>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        ♡
+                    </div>
+
+                    <strong>
+                        FRESH
+                    </strong>
+
+                    <span>
+                        Everyday
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUANTITY -->
+
+            <div class="quantity-title">
+                QUANTITY
+            </div>
+
+
+            <div class="quantity">
+
+                <button
+                    type="button"
+                    onclick="changeQuantity(-1)">
+                    −
+                </button>
+
+                <span id="quantity">
+                    1
+                </span>
+
+                <button
+                    type="button"
+                    onclick="changeQuantity(1)">
+                    +
+                </button>
+
+            </div>
+
+
+            <!-- BUTTONS -->
+
+            <div class="buttons">
+
+                <button
+                    type="button"
+                    class="add-cart"
+                    onclick="addToCart()">
+
+                    🛒 ADD TO CART
+
+                </button>
+
+
+                <a
+                    href="products1.html"
+                    class="back-products">
+
+                    ← BACK TO PRODUCTS
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     CART
+===================================================== -->
+
+<div
+    class="cart"
+    id="cartButton">
+
+    🛒
+
+    <div
+        class="cart-count"
+        id="cartCount">
+        0
+    </div>
+
+</div>
+
+
+<div
+    class="cart-message"
+    id="cartMessage">
+
+    Added to cart ✓
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   PRODUCT DATABASE
+========================================================= */
+
+const products = [
+
+    {
+        id:1,
+        name:"Fresh Red Apples",
+        category:"FRUITS",
+        price:180,
+        unit:"kg",
+        image:"https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=1000&q=85",
+        badge:"FRESH",
+        description:"Crisp and naturally sweet apples selected for everyday freshness and quality."
+    },
+
+    {
+        id:2,
+        name:"Fresh Bananas",
+        category:"FRUITS",
+        price:60,
+        unit:"kg",
+        image:"https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=1000&q=85",
+        badge:"DEAL",
+        description:"Naturally sweet everyday bananas, perfect for breakfast, snacks and smoothies."
+    },
+
+    {
+        id:3,
+        name:"Fresh Tomatoes",
+        category:"VEGETABLES",
+        price:50,
+        unit:"kg",
+        image:"https://images.unsplash.com/photo-1546094096-0df4bcaaa337?auto=format&fit=crop&w=1000&q=85",
+        badge:"FRESH",
+        description:"Ripe and juicy farm-fresh tomatoes ideal for curries, salads and everyday cooking."
+    },
+
+    {
+        id:4,
+        name:"Fresh Broccoli",
+        category:"VEGETABLES",
+        price:120,
+        unit:"kg",
+        image:"https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?auto=format&fit=crop&w=1000&q=85",
+        badge:"FRESH",
+        description:"Green and nutritious fresh broccoli, carefully selected for quality and freshness."
+    },
+
+    {
+        id:5,
+        name:"Fresh Milk",
+        category:"DAIRY",
+        price:60,
+        unit:"litre",
+        image:"https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=1000&q=85",
+        badge:"DAILY",
+        description:"Fresh dairy milk for everyday use, breakfast and cooking."
+    },
+
+    {
+        id:6,
+        name:"Premium Cheese",
+        category:"DAIRY",
+        price:250,
+        unit:"pack",
+        image:"https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=1000&q=85",
+        description:"Smooth and creamy cheese that is perfect for sandwiches, snacks and cooking."
+    },
+
+    {
+        id:7,
+        name:"Fresh Bread",
+        category:"BAKERY",
+        price:45,
+        unit:"pack",
+        image:"https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=85",
+        badge:"FRESH",
+        description:"Soft and freshly baked bread, perfect for breakfast and everyday meals."
+    },
+
+    {
+        id:8,
+        name:"Chocolate Cake",
+        category:"BAKERY",
+        price:450,
+        unit:"piece",
+        image:"https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1000&q=85",
+        badge:"POPULAR",
+        description:"Rich and delicious chocolate cake made for celebrations and special occasions."
+    },
+
+    {
+        id:9,
+        name:"Potato Chips",
+        category:"SNACKS",
+        price:30,
+        unit:"pack",
+        image:"https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&w=1000&q=85",
+        description:"Crispy and crunchy potato chips for a delicious anytime snack."
+    },
+
+    {
+        id:10,
+        name:"Chocolate Cookies",
+        category:"SNACKS",
+        price:80,
+        unit:"pack",
+        image:"https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=1000&q=85",
+        description:"Delicious crunchy chocolate cookies with a rich chocolate taste."
+    },
+
+    {
+        id:11,
+        name:"Orange Juice",
+        category:"BEVERAGES",
+        price:110,
+        unit:"bottle",
+        image:"https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=1000&q=85",
+        badge:"DEAL",
+        description:"Refreshing orange juice with a naturally bright and fruity flavour."
+    },
+
+    {
+        id:12,
+        name:"Premium Coffee",
+        category:"BEVERAGES",
+        price:220,
+        unit:"pack",
+        image:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1000&q=85",
+        description:"Rich aromatic coffee for your mornings, breaks and everyday enjoyment."
+    },
+
+    {
+        id:13,
+        name:"Fresh Oranges",
+        category:"FRUITS",
+        price:90,
+        unit:"kg",
+        image:"https://images.unsplash.com/photo-1547514701-42782101795e?auto=format&fit=crop&w=1000&q=85",
+        badge:"FRESH",
+        description:"Juicy and vitamin-rich oranges with a refreshing natural taste."
+    },
+
+    {
+        id:14,
+        name:"Fresh Carrots",
+        category:"VEGETABLES",
+        price:70,
+        unit:"kg",
+        image:"https://images.unsplash.com/photo-1445282768818-728615cc910a?auto=format&fit=crop&w=1000&q=85",
+        description:"Crunchy and naturally sweet carrots, ideal for cooking and salads."
+    },
+
+    {
+        id:15,
+        name:"Creamy Butter",
+        category:"DAIRY",
+        price:120,
+        unit:"pack",
+        image:"https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?auto=format&fit=crop&w=1000&q=85",
+        description:"Smooth creamy butter for cooking, baking and spreading."
+    },
+
+    {
+        id:16,
+        name:"Popcorn",
+        category:"SNACKS",
+        price:50,
+        unit:"pack",
+        image:"https://images.unsplash.com/photo-1578849278619-e73505e9610f?auto=format&fit=crop&w=1000&q=85",
+        description:"Light and crunchy popcorn snack, perfect for movie time and relaxing."
+    },
+
+    {
+        id:17,
+        name:"Mineral Water",
+        category:"BEVERAGES",
+        price:25,
+        unit:"bottle",
+        image:"https://images.unsplash.com/photo-1564419320461-6870880221ad?auto=format&fit=crop&w=1000&q=85",
+        description:"Clean and refreshing drinking water for everyday hydration."
+    },
+
+    {
+        id:18,
+        name:"Fresh Grapes",
+        category:"FRUITS",
+        price:140,
+        unit:"kg",
+        image:"https://images.unsplash.com/photo-1537640538966-79f369143f8f?auto=format&fit=crop&w=1000&q=85",
+        badge:"FRESH",
+        description:"Sweet and juicy fresh grapes, perfect for snacking and desserts."
+    },
+
+    {
+        id:19,
+        name:"Fresh Potatoes",
+        category:"VEGETABLES",
+        price:45,
+        unit:"kg",
+        image:"https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=1000&q=85",
+        description:"Quality potatoes for everyday cooking, curries, fries and snacks."
+    },
+
+    {
+        id:20,
+        name:"Butter Croissant",
+        category:"BAKERY",
+        price:80,
+        unit:"piece",
+        image:"https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=1000&q=85",
+        badge:"NEW",
+        description:"Golden, flaky and freshly baked butter croissant with a delicious rich taste."
+    }
+
+];
+
+
+/* =========================================================
+   GET PRODUCT ID
+========================================================= */
+
+const urlParams =
+    new URLSearchParams(
+        window.location.search
+    );
+
+const productId =
+    Number(
+        urlParams.get("id")
+    );
+
+
+/* =========================================================
+   FIND PRODUCT
+========================================================= */
+
+const product =
+    products.find(function(item){
+
+        return item.id === productId;
+
+    });
+
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const productImage =
+    document.getElementById("productImage");
+
+const productName =
+    document.getElementById("productName");
+
+const productCategory =
+    document.getElementById("productCategory");
+
+const productDescription =
+    document.getElementById("productDescription");
+
+const productPrice =
+    document.getElementById("productPrice");
+
+const productUnit =
+    document.getElementById("productUnit");
+
+const productBadge =
+    document.getElementById("productBadge");
+
+const quantityElement =
+    document.getElementById("quantity");
+
+const cartCount =
+    document.getElementById("cartCount");
+
+const cartMessage =
+    document.getElementById("cartMessage");
+
+
+/* =========================================================
+   QUANTITY
+========================================================= */
+
+let quantity = 1;
+
+
+/* =========================================================
+   LOAD PRODUCT
+========================================================= */
+
+if(product){
+
+    document.title =
+        product.name +
+        " | Shahanaz Super Market";
+
+
+    productImage.src =
+        product.image;
+
+
+    productImage.alt =
+        product.name;
+
+
+    productName.textContent =
+        product.name;
+
+
+    productCategory.textContent =
+        product.category;
+
+
+    productDescription.textContent =
+        product.description;
+
+
+    productPrice.textContent =
+        "₹" + product.price;
+
+
+    productUnit.textContent =
+        "/ " + product.unit;
+
+
+    if(product.badge){
+
+        productBadge.textContent =
+            product.badge;
+
+        productBadge.style.display =
+            "block";
+
+    }
+
+}
+
+
+/* =========================================================
+   QUANTITY CONTROL
+========================================================= */
+
+function changeQuantity(amount){
+
+    quantity += amount;
+
+
+    if(quantity < 1){
+
+        quantity = 1;
+
+    }
+
+
+    if(quantity > 20){
+
+        quantity = 20;
+
+    }
+
+
+    quantityElement.textContent =
+        quantity;
+
+}
+
+
+/* =========================================================
+   CART
+========================================================= */
+
+let cart =
+    JSON.parse(
+        localStorage.getItem("cart")
+    ) || [];
+
+
+function updateCartCount(){
+
+    let count = 0;
+
+
+    cart.forEach(function(item){
+
+        count +=
+            Number(item.quantity) || 0;
+
+    });
+
+
+    cartCount.textContent =
+        count;
+
+}
+
+
+updateCartCount();
+
+
+/* =========================================================
+   ADD TO CART
+========================================================= */
+
+function addToCart(){
+
+    if(!product){
+
+        return;
+
+    }
+
+
+    const existing =
+        cart.find(function(item){
+
+            return Number(item.id) ===
+                   Number(product.id);
+
+        });
+
+
+    if(existing){
+
+        existing.quantity +=
+            quantity;
+
+    }
+
+    else{
+
+        cart.push({
+
+            id:product.id,
+
+            name:product.name,
+
+            price:product.price,
+
+            image:product.image,
+
+            unit:product.unit,
+
+            quantity:quantity
+
+        });
+
+    }
+
+
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+
+
+    updateCartCount();
+
+
+    showMessage(
+        product.name +
+        " added to cart ✓"
+    );
+
+}
+
+
+/* =========================================================
+   CART MESSAGE
+========================================================= */
+
+let messageTimer;
+
+
+function showMessage(text){
+
+    cartMessage.textContent =
+        text;
+
+
+    cartMessage.classList.add(
+        "show"
+    );
+
+
+    clearTimeout(
+        messageTimer
+    );
+
+
+    messageTimer =
+        setTimeout(function(){
+
+            cartMessage.classList.remove(
+                "show"
+            );
+
+        },1800);
+
+}
+
+
+/* =========================================================
+   CART BUTTON
+========================================================= */
+
+document
+    .getElementById("cartButton")
+    .addEventListener(
+        "click",
+        function(){
+
+            window.location.href =
+                "cart.html";
+
+        }
+    );
+
+
+/* =========================================================
+   PRODUCT NOT FOUND
+========================================================= */
+
+if(!product){
+
+    productName.textContent =
+        "Product Not Found";
+
+    productCategory.textContent =
+        "PRODUCT";
+
+    productDescription.textContent =
+        "Sorry, this product could not be found.";
+
+    productPrice.textContent =
+        "—";
+
+    productImage.src =
+        "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=1200&q=85";
+
+}
+
+</script>
+
+</body>
+</html>

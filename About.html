@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Us | Shahanaz Super Market</title>
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#08090d;
+    color:#fff;
+    min-height:100vh;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.hero-bg{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(5,8,15,.96),
+            rgba(9,15,25,.88),
+            rgba(4,8,14,.96)
+        ),
+        url("https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=2200&q=90")
+        center/cover no-repeat;
+
+    filter:blur(3px);
+
+    transform:scale(1.04);
+
+    z-index:-2;
+}
+
+.hero-overlay{
+    position:fixed;
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(233,30,99,.18),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(255,193,7,.08),
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(3,5,10,.2),
+            rgba(3,5,10,.88)
+        );
+
+    z-index:-1;
+
+    pointer-events:none;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar{
+    height:82px;
+    width:100%;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 5vw;
+
+    background:rgba(5,7,12,.58);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.12);
+
+    position:sticky;
+    top:0;
+
+    z-index:1000;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:11px;
+}
+
+.logo-icon{
+    width:46px;
+    height:46px;
+
+    display:grid;
+    place-items:center;
+
+    background:#e91e63;
+
+    color:#fff;
+
+    border-radius:12px;
+
+    font-size:22px;
+    font-weight:bold;
+
+    box-shadow:
+        0 10px 30px rgba(233,30,99,.35);
+}
+
+.logo-text h1{
+    color:#fff;
+
+    font-size:16px;
+
+    white-space:nowrap;
+}
+
+.logo-text span{
+    display:block;
+
+    color:#aeb4c0;
+
+    font-size:7px;
+
+    letter-spacing:3px;
+
+    margin-top:4px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.nav-links{
+    display:flex;
+
+    align-items:center;
+
+    gap:4px;
+}
+
+.nav-links a{
+    color:#e9edf5;
+
+    text-decoration:none;
+
+    font-size:8px;
+
+    font-weight:bold;
+
+    padding:11px 13px;
+
+    border-radius:8px;
+
+    transition:.25s;
+}
+
+.nav-links a:hover{
+    background:rgba(255,255,255,.08);
+
+    color:#ff4081;
+}
+
+.nav-links a.active{
+    background:#e91e63;
+
+    color:#fff;
+
+    box-shadow:
+        0 8px 22px rgba(233,30,99,.25);
+}
+
+.nav-links .offer-link{
+    color:#ffd54f;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.about-page{
+    min-height:100vh;
+
+    padding:
+        65px 6vw 100px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.about-header{
+    max-width:900px;
+
+    margin:
+        0 auto 45px;
+
+    text-align:center;
+
+    text-shadow:
+        0 2px 15px rgba(0,0,0,.55);
+}
+
+.small-title{
+    color:#ff4081;
+
+    font-size:10px;
+
+    font-weight:bold;
+
+    letter-spacing:4px;
+
+    margin-bottom:15px;
+}
+
+.about-header h2{
+    font-size:
+        clamp(45px,6vw,72px);
+
+    line-height:.95;
+
+    letter-spacing:-4px;
+
+    margin-bottom:20px;
+}
+
+.about-header h2 span{
+    color:#ff4081;
+}
+
+.about-header p{
+    max-width:650px;
+
+    margin:auto;
+
+    color:#c7ccd5;
+
+    font-size:11px;
+
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   ABOUT CONTENT
+========================================================= */
+
+.about-container{
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1.2fr;
+
+    gap:30px;
+}
+
+
+/* =========================================================
+   MANAGER CARD
+========================================================= */
+
+.manager-card{
+    background:
+        rgba(12,15,23,.70);
+
+    border:
+        1px solid rgba(255,255,255,.12);
+
+    border-radius:28px;
+
+    padding:30px;
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.45);
+
+    backdrop-filter:blur(18px);
+
+    text-align:center;
+}
+
+
+/* =========================================================
+   MANAGER IMAGE
+========================================================= */
+
+.manager-image{
+    width:100%;
+
+    max-width:380px;
+
+    height:430px;
+
+    margin:0 auto 25px;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    background:#15171d;
+
+    border:
+        1px solid rgba(233,30,99,.35);
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,.45);
+}
+
+.manager-image img{
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+
+/* pink glow */
+
+.manager-image::after{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 55%,
+            rgba(233,30,99,.18)
+        );
+}
+
+
+.manager-label{
+    color:#ff4081;
+
+    font-size:9px;
+
+    font-weight:bold;
+
+    letter-spacing:3px;
+
+    margin-bottom:8px;
+}
+
+.manager-card h3{
+    font-size:27px;
+
+    margin-bottom:7px;
+}
+
+.manager-card p{
+    color:#aeb4bf;
+
+    font-size:11px;
+
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   STORY CARD
+========================================================= */
+
+.story-card{
+    background:
+        rgba(12,15,23,.70);
+
+    border:
+        1px solid rgba(255,255,255,.12);
+
+    border-radius:28px;
+
+    padding:40px;
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.45);
+
+    backdrop-filter:blur(18px);
+}
+
+.story-label{
+    color:#ff4081;
+
+    font-size:10px;
+
+    font-weight:bold;
+
+    letter-spacing:3px;
+
+    margin-bottom:15px;
+}
+
+.story-card h2{
+    font-size:38px;
+
+    line-height:1.1;
+
+    margin-bottom:20px;
+}
+
+.story-card h2 span{
+    color:#ff4081;
+}
+
+.story-card p{
+    color:#b9bec8;
+
+    font-size:12px;
+
+    line-height:1.9;
+
+    margin-bottom:18px;
+}
+
+
+/* =========================================================
+   HIGHLIGHTS
+========================================================= */
+
+.highlights{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:14px;
+
+    margin-top:28px;
+}
+
+.highlight{
+    padding:20px;
+
+    border-radius:15px;
+
+    background:
+        rgba(255,255,255,.055);
+
+    border:
+        1px solid rgba(255,255,255,.10);
+
+    transition:.25s;
+}
+
+.highlight:hover{
+    transform:translateY(-4px);
+
+    border-color:
+        rgba(233,30,99,.45);
+
+    background:
+        rgba(233,30,99,.08);
+}
+
+.highlight-icon{
+    font-size:24px;
+
+    margin-bottom:10px;
+}
+
+.highlight h4{
+    font-size:13px;
+
+    margin-bottom:6px;
+}
+
+.highlight p{
+    font-size:9px;
+
+    color:#8f96a2;
+
+    line-height:1.6;
+
+    margin:0;
+}
+
+
+/* =========================================================
+   MISSION SECTION
+========================================================= */
+
+.mission{
+    max-width:1200px;
+
+    margin:30px auto 0;
+
+    padding:35px;
+
+    background:
+        rgba(12,15,23,.70);
+
+    border:
+        1px solid rgba(255,255,255,.12);
+
+    border-radius:28px;
+
+    backdrop-filter:blur(18px);
+
+    text-align:center;
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.35);
+}
+
+.mission-label{
+    color:#ff4081;
+
+    font-size:9px;
+
+    font-weight:bold;
+
+    letter-spacing:3px;
+
+    margin-bottom:12px;
+}
+
+.mission h2{
+    font-size:30px;
+
+    margin-bottom:12px;
+}
+
+.mission p{
+    max-width:700px;
+
+    margin:auto;
+
+    color:#aeb4bf;
+
+    font-size:11px;
+
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    margin-top:40px;
+
+    padding:35px 6%;
+
+    text-align:center;
+
+    background:
+        rgba(5,7,12,.75);
+
+    border-top:
+        1px solid rgba(255,255,255,.10);
+}
+
+footer p{
+    color:#777f8c;
+
+    font-size:10px;
+}
+
+.footer-name{
+    color:#fff;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    margin-bottom:8px;
+}
+
+.footer-name span{
+    color:#ff4081;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:900px){
+
+    .about-container{
+        grid-template-columns:1fr;
+    }
+
+    .manager-image{
+        max-width:420px;
+    }
+
+}
+
+@media(max-width:700px){
+
+    .navbar{
+        padding:0 20px;
+    }
+
+    .nav-links a{
+        padding:8px 7px;
+
+        font-size:7px;
+    }
+
+    .about-page{
+        padding:
+            45px 20px 70px;
+    }
+
+    .story-card{
+        padding:25px;
+    }
+
+    .highlights{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .navbar{
+        height:70px;
+    }
+
+    .logo-icon{
+        width:38px;
+        height:38px;
+
+        font-size:18px;
+    }
+
+    .logo-text h1{
+        font-size:11px;
+    }
+
+    .logo-text span{
+        display:none;
+    }
+
+    .nav-links{
+        gap:1px;
+    }
+
+    .nav-links a{
+        font-size:6px;
+
+        padding:6px 4px;
+    }
+
+    .about-page{
+        padding:
+            35px 12px 60px;
+    }
+
+    .about-header h2{
+        font-size:46px;
+
+        letter-spacing:-3px;
+    }
+
+    .about-header p{
+        font-size:9px;
+    }
+
+    .manager-card{
+        padding:20px;
+    }
+
+    .manager-image{
+        height:400px;
+    }
+
+    .story-card h2{
+        font-size:30px;
+    }
+
+}
+
+@media(max-width:400px){
+
+    .nav-links a{
+        font-size:5px;
+
+        padding:5px 3px;
+    }
+
+    .about-header h2{
+        font-size:40px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BACKGROUND
+===================================================== -->
+
+<div class="hero-bg"></div>
+<div class="hero-overlay"></div>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav class="navbar">
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            S
+        </div>
+
+        <div class="logo-text">
+
+            <h1>
+                Shahanaz Super Market
+            </h1>
+
+            <span>
+                FRESH • QUALITY • EVERYDAY
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="nav-links">
+
+        <a href="home.html">
+            HOME
+        </a>
+
+        <a href="products1.html">
+            PRODUCTS
+        </a>
+
+        <a href="categories.html">
+            CATEGORIES
+        </a>
+
+        <a
+            href="Offers.html"
+            class="offer-link">
+            OFFERS
+        </a>
+
+        <a
+            href="About.html"
+            class="active">
+            ABOUT
+        </a>
+
+        <a href="contact.html">
+            CONTACT
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="about-page">
+
+
+    <!-- HEADER -->
+
+    <section class="about-header">
+
+        <div class="small-title">
+            ABOUT SHAHANAZ SUPER MARKET
+        </div>
+
+        <h2>
+            About <span>Us.</span>
+        </h2>
+
+        <p>
+            Get to know the people and values behind
+            Shahanaz Super Market.
+        </p>
+
+    </section>
+
+
+    <!-- =================================================
+         ABOUT CONTENT
+    ================================================= -->
+
+    <section class="about-container">
+
+
+        <!-- MANAGER -->
+
+        <div class="manager-card">
+
+            <div class="manager-image">
+
+                <!-- YOUR PHOTO -->
+                <img
+                    src="img3.jpg.jpeg"
+                    alt="Shahanaz - Manager of Shahanaz Super Market">
+
+            </div>
+
+
+            <div class="manager-label">
+                STORE MANAGER
+            </div>
+
+            <h3>
+                Shahanaz
+            </h3>
+
+            <p>
+                Manager &amp; Owner
+            </p>
+
+        </div>
+
+
+        <!-- STORY -->
+
+        <div class="story-card">
+
+            <div class="story-label">
+                OUR STORY
+            </div>
+
+            <h2>
+                More Than Just a <span>Super Market.</span>
+            </h2>
+
+            <p>
+                Shahanaz Super Market was created with a simple
+                goal — to make everyday shopping easier,
+                convenient and enjoyable for everyone.
+            </p>
+
+            <p>
+                We bring together fresh fruits and vegetables,
+                dairy products, bakery items, snacks, beverages
+                and everyday essentials in one convenient place.
+            </p>
+
+            <p>
+                We believe that good products, honest service
+                and a welcoming shopping experience are what
+                make a supermarket truly special.
+            </p>
+
+
+            <!-- HIGHLIGHTS -->
+
+            <div class="highlights">
+
+
+                <div class="highlight">
+
+                    <div class="highlight-icon">
+                        🥬
+                    </div>
+
+                    <h4>
+                        Fresh Products
+                    </h4>
+
+                    <p>
+                        Carefully selected products
+                        for everyday needs.
+                    </p>
+
+                </div>
+
+
+                <div class="highlight">
+
+                    <div class="highlight-icon">
+                        ⭐
+                    </div>
+
+                    <h4>
+                        Quality First
+                    </h4>
+
+                    <p>
+                        We focus on quality and
+                        customer satisfaction.
+                    </p>
+
+                </div>
+
+
+                <div class="highlight">
+
+                    <div class="highlight-icon">
+                        🛒
+                    </div>
+
+                    <h4>
+                        Easy Shopping
+                    </h4>
+
+                    <p>
+                        A simple and convenient
+                        shopping experience.
+                    </p>
+
+                </div>
+
+
+                <div class="highlight">
+
+                    <div class="highlight-icon">
+                        ❤️
+                    </div>
+
+                    <h4>
+                        Customer Care
+                    </h4>
+
+                    <p>
+                        Our customers are always
+                        at the heart of what we do.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         MISSION
+    ================================================= -->
+
+    <section class="mission">
+
+        <div class="mission-label">
+            OUR MISSION
+        </div>
+
+        <h2>
+            Fresh. Simple. <span style="color:#ff4081;">
+            Reliable.
+            </span>
+        </h2>
+
+        <p>
+            Our mission is to provide quality everyday
+            products while creating a comfortable,
+            friendly and convenient shopping experience
+            for every customer.
+        </p>
+
+    </section>
+
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-name">
+        Shahanaz <span>Super Market</span>
+    </div>
+
+    <p>
+        © 2026 Shahanaz Super Market.
+        All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
